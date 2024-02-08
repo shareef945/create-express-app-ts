@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node server.ts",
     "build": "rm -rf build/ && tsc",
-    "postinstall": "node ./install.js"
+    "postinstall": "node install.js"
   },
   "author": "shareef ali",
   "files": [
@@ -43,6 +43,6 @@
     "prettier": "^3.2.5"
   },
   "bin": {
-    "create-node-app-scaffold": "./install.js"
+    "create-node-app-scaffold": "./create.js"
   }
 }
