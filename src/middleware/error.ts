@@ -1,6 +1,6 @@
 import { Response } from "express";
-import { STATUS_BAD_REQUEST, STATUS_INTERNAL_SERVER_ERROR } from "../../../config/config";
-import { ValidationError } from "../../../utils/utils";
+import { STATUS_BAD_REQUEST, STATUS_INTERNAL_SERVER_ERROR } from "../config/config";
+import { ValidationError } from "../utils/utils";
 
 export const handleError = (error: any, res: Response) => {
   console.error(error);

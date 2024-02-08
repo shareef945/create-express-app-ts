@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import { API_SECRET } from "../config/config";
-import { tokenPayload } from "../api/v1/models/auth";
+import { tokenPayload } from "../models/v1/auth-model";
 
 export function generateToken(password: string, userId: string, client: string) {
   return jwt.sign({ userId, client }, password, { expiresIn: "1h" });
@@ -15,7 +15,6 @@ export function verifyRefreshToken(refreshToken: string, userId: string) {
     const decoded = jwt.verify(refreshToken, API_SECRET!) as tokenPayload;
     return decoded.userId === userId;
   } catch (err) {
-    // Token is not valid or expired
     return false;
   }
 }

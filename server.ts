@@ -3,9 +3,10 @@ import express, { Express } from "express";
 import { expressjwt } from "express-jwt";
 import http from "http";
 import morgan from "morgan";
-import routesV1 from "./api/v1/routes/index";
-import { API_PASSWORD, INVALID_TOKEN_MESSAGE, UNPROTECTED_ROUTES, port } from "./config/config";
-import { notFound } from "./utils/not-found";
+import todoRoutesV1 from "./src/routes/v1/todo-routes";
+import authRoutesV1 from "./src/routes/v1/auth-routes";
+import { API_PASSWORD, INVALID_TOKEN_MESSAGE, UNPROTECTED_ROUTES, port } from "./src/config/config";
+import { notFound } from "./src/utils/not-found";
 import cors from "cors";
 
 const router: Express = express();
@@ -17,10 +18,11 @@ router.use(express.urlencoded({ extended: false }));
 router.use(express.json());
 
 /** ROUTES */
-router.use("/transport/v1", auth, routesV1);
+router.use("/v1/auth", auth, authRoutesV1);
+router.use("/v1/todos", auth, todoRoutesV1);
 
-router.get("/transport", (req, res) => {
-  res.send("Transport API Server is running, please use the correct endpoint");
+router.get("/", (req, res) => {
+  res.send("Server is running, please use the correct endpoint");
 });
 
 /** ERROR HANDLING */
@@ -41,4 +43,4 @@ router.use((req, res, next) => {
 /** SERVER */
 const httpServer = http.createServer(router);
 const PORT: any = port;
-httpServer.listen(PORT, () => console.log(`Transport API is running on ${PORT}`));
+httpServer.listen(PORT, () => console.log(`Server is running on ${PORT}`));

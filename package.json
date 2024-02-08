@@ -5,7 +5,7 @@
   "main": "src/server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/server.ts",
+    "dev": "nodemon server.ts",
     "build": "rm -rf build/ && tsc"
   },
   "author": "shareef ali",
@@ -38,7 +38,7 @@
     "firebase-functions-test": "^3.1.0",
     "jest": "^29.7.0",
     "nodemon": "^3.0.1",
-    "prettier": "^3.1.1",
+    "prettier": "^3.2.5",
     "supertest": "^6.3.3"
   }
 }
