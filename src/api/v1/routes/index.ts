@@ -23,6 +23,8 @@ import { Merchant, User } from "../models/users";
 
 const router = express.Router();
 
+
+
 router.post("/interest", validateFields<RegisterInterestBody>(registerInterestValidationMapping), validateInterest, miscController.addInterestedParty);
 
 router.post("/login", authController.generateAToken);
