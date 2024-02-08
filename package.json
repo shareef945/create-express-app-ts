@@ -1,6 +1,6 @@
 {
   "name": "create-node-app-scaffold",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "description": "NodeJS Server",
   "main": "server.ts",
   "scripts": {
@@ -40,6 +40,6 @@
     "prettier": "^3.2.5"
   },
   "bin": {
-    "create-node-app-scaffold": "./install.ts"
+    "create-node-app-scaffold": "./install.js"
   }
 }

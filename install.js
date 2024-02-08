@@ -3,11 +3,10 @@ const fs = require("fs");
 const path = require("path");
 
 const targetDir = process.cwd();
-
 const templateDir = path.join(__dirname);
 
-function copyFiles(srcDir: string, destDir: string) {
-  fs.readdirSync(srcDir).forEach((file: any) => {
+function copyFiles(srcDir, destDir) {
+  fs.readdirSync(srcDir).forEach((file) => {
     const srcFile = path.join(srcDir, file);
     const destFile = path.join(destDir, file);
 
