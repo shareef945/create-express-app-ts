@@ -1,7 +1,7 @@
 {
-  "name": "create-express-app",
+  "name": "express-app-generator-ts",
   "version": "0.1.0",
-  "description": "NodeJS Server",
+  "description": "Express app generator",
   "main": "server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,8 +14,10 @@
   ],
   "keywords": [
     "node",
+    "express",
     "scaffold",
-    "template"
+    "template",
+    "typescript"
   ],
   "license": "ISC",
   "dependencies": {
@@ -42,6 +44,6 @@
     "prettier": "^3.2.5"
   },
   "bin": {
-    "create-node-app-scaffold": "./create.js"
+    "express-app-generator-ts": "./create.js"
   }
 }
