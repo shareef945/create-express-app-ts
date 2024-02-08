@@ -1,5 +1,5 @@
 {
-  "name": "create-node-app",
+  "name": "create-node-app-scaffold",
   "version": "0.1.0",
   "description": "NodeJS Server",
   "main": "server.ts",
