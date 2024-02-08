@@ -9,7 +9,7 @@ const { execSync } = require("child_process");
 const targetDir = process.argv[2] || process.cwd();
 
 // Get the directory of the package files
-const templateDir = path.__dirname;
+const templateDir = __dirname;
 
 // List of files to ignore
 const ignoreList = [".gitignore", ".npmignore", "node_modules", "create.js"];
