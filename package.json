@@ -6,10 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "ts-node server.ts",
-    "build": "rm -rf build/ && tsc"
+    "build": "rm -rf build/ && tsc",
+    "postinstall": "./install.js"
   },
   "author": "shareef ali",
-  "files": ["*"],
+  "files":  ["**/*"],
   "keywords": [
     "node",
     "scaffold",
