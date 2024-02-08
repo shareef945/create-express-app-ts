@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");
 
-const targetDir = process.argv[2] || process.cwd();
+const targetDirName = process.argv[2]; 
 
 const templateDir = __dirname;
 
@@ -29,15 +29,25 @@ function copyFiles(srcDir, destDir, ignoreList) {
   });
 }
 
-function installDependencies() {
-  execSync("npm install", { stdio: "inherit" });
+function installDependencies(destDir) {
+  execSync("npm install", { stdio: "inherit", cwd: destDir });
 }
 
 function main() {
+  let targetDir;
+  if (targetDirName) {
+    targetDir = path.join(process.cwd(), targetDirName);
+    if (!fs.existsSync(targetDir)) {
+      fs.mkdirSync(targetDir, { recursive: true });
+    }
+  } else {
+    targetDir = process.cwd();
+  }
+
   console.log("Setting up a new Node.js app...");
   copyFiles(templateDir, targetDir, ignoreList);
 
-  installDependencies();
+  installDependencies(targetDir);
   console.log("Your Node.js app is ready!");
   console.log("Check our documentation here - https://www.npmjs.com/package/create-node-app-scaffold");
 }

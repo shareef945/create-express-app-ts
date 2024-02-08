@@ -1,9 +1,12 @@
-#Express App Scaffold
+# Express App Scaffold
+
 This project provides a quick and easy way to set up a new Express.js application using TypeScript. It includes a basic file structure for an Express.js application, along with some common middleware and utility functions.
 
-#Project Structure
+## Project Structure
+
 The generated project has the following structure:
 
+```
 ├── .gitignore
 ├── docker-compose.yml
 ├── Dockerfile
@@ -45,13 +48,18 @@ The generated project has the following structure:
 ├── test/
 ├── tests/
 └── tsconfig.json
+```
 
-#Usage
+## Usage
+
 To create a new project, run the following command:
 
-npx express-app-scaffold <project-directory>
+```
+npx express-app-generator-ts <project-directory-name>
+```
 
-#Features
+## Features
+
 - Pre-configured TypeScript setup
 - Express.js server setup
 - Basic authentication and todo routes, controllers, and models
@@ -60,5 +68,6 @@ npx express-app-scaffold <project-directory>
 - Dockerfile and docker-compose.yml for containerization
 - Pre-configured testing setup
 
-#Contributing
+## Contributing
+
 Contributions are welcome! Please open an issue if you encounter any problems or have a feature request.
