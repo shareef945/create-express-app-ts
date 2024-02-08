@@ -10,13 +10,21 @@ const templateDir = __dirname;
 const ignoreList = [".gitignore", ".npmignore", "node_modules", ".git"];
 
 function copyFiles(srcDir, destDir, ignoreList) {
+  console.log(`srcDir: ${srcDir}`);
+  console.log(`destDir: ${destDir}`);
+
   fs.readdirSync(srcDir).forEach((file) => {
+    console.log(`file: ${file}`);
+
     if (ignoreList.includes(file)) {
       return;
     }
 
     const srcFile = path.join(srcDir, file);
     const destFile = path.join(destDir, file);
+
+    console.log(`srcFile: ${srcFile}`);
+    console.log(`destFile: ${destFile}`);
 
     const stat = fs.statSync(srcFile);
     if (stat.isDirectory()) {
@@ -27,5 +35,4 @@ function copyFiles(srcDir, destDir, ignoreList) {
     }
   });
 }
-
 copyFiles(templateDir, targetDir, ignoreList);
