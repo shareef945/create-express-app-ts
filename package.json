@@ -1,6 +1,6 @@
 {
   "name": "create-node-app-scaffold",
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "NodeJS Server",
   "main": "server.ts",
   "scripts": {
@@ -10,7 +10,9 @@
     "postinstall": "./install.js"
   },
   "author": "shareef ali",
-  "files":  ["**/*"],
+  "files": [
+    "**/*"
+  ],
   "keywords": [
     "node",
     "scaffold",
