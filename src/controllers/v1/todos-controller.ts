@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { handleError } from "../../middleware/error";
 import { STATUS_OK } from "../../config/config";
-import { api } from "../../lib/axios/axios";
+import { api } from "../../lib/http/axios";
 import { endpoints } from "../../config/endpoints";
 
 const getTodos = async (req: Request, res: Response, next: NextFunction) => {
