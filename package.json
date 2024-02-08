@@ -1,6 +1,6 @@
 {
   "name": "create-node-app-scaffold",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "NodeJS Server",
   "main": "server.ts",
   "scripts": {
@@ -9,6 +9,12 @@
     "build": "rm -rf build/ && tsc"
   },
   "author": "shareef ali",
+  "files": ["*"],
+  "keywords": [
+    "node",
+    "scaffold",
+    "template"
+  ],
   "license": "ISC",
   "dependencies": {
     "@types/axios": "^0.14.0",
@@ -32,5 +38,8 @@
   "devDependencies": {
     "@types/jest": "^29.5.10",
     "prettier": "^3.2.5"
+  },
+  "bin": {
+    "create-node-app-scaffold": "./install.ts"
   }
 }
